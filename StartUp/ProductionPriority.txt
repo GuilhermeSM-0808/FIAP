@@ -1,0 +1,13 @@
+1 - Computer Vision to analyze the technical Drawings
+
+2 - Figure out the production procedures and the costs related to it
+
+3 - Figure out total cost calculation based on a personalized "Orcamento"
+
+4 - UX Design 
+
+5 - Create data base for company profiles to store their information, log in, personal profiles and payment information
+
+6 - Data base for Production schedule visualization and planning
+
+7 - UX Design polish
