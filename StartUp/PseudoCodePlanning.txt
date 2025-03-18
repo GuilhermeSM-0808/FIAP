@@ -1,0 +1,53 @@
+// Ask User To Login
+
+    // If user doesnt have an Account ask user to create an Account
+
+        // Ask user to make a personal profile and provide documents
+
+        // Ask user if he has a link to an registered Company in the App or if he wants to register one
+
+            // If he has a link he will be added to that company's employees list and can act on their behalf on the App
+
+            // If he wants to register his company he will be asked wheter he is a provider or buyer, as well to provide legal documents as proof for the company's existance
+
+                // If he is a provider he will be asked to list all Machinery the company posseses and optionally all the raw materail he has in stock (so the app can figure out what piece that copmapny can produce and how much based on stock)
+
+                // He will also be given the option to provide their "Orçamento" (budget) excel or estimate/planning programm/costs
+
+                // He will be asked some more cost related questions to figure out what his "Orçamento"/budgeting should be, like rent/IPTU, employees salaries and target profit marging is
+
+                    //With that the company's "Orçamento" can be automatically calculated based on the client's order
+
+// After Loggin in the user will have the option to: Scan a new Technical Drawing, View Current Productions, View Other Company profiles, See their Production/Shipment Schedule and to go to Settings
+
+    // Scanning a new Technical Drawing
+
+        // The user will be given the option to upload a document or take a picture of the drawing on the spot and will be asked how many piece per month are needed and the grand total of pieces needed
+
+            // The Drawing will be ran through Computer Vision to analyze the drawing and figure out the dimensions of the piece
+
+                // Knowing the dimensions of the piece, it will be calculated how much material it needs for each piece and which cuts/procedures are nescessary to achieve the final product
+
+                    // With the procedures needs known, the information will be ran trhough each (provider) companies information table, to know if they are able to produce the target amount and how much it will costs
+
+                        // Then a List with many different companies will be shown with information on costs, distance, production rate/capacity, materials in stock and reviews in relevance order (Lowest cost first, shortest distance, highest production rate/capaticty and etc)
+
+                        // Then the user is able to choose a company or split the order between two companies (in case they dont meet the production capacity). And send a order/request of production
+
+                            // The company receiving the requests will be provided with their very own "Orçamento", production procedures needed and based on their information they can choose to accept or not the order/request
+
+                        // If their order is accepted that piece will be added to the Client's and Provider's Currently in Productions Page and Schdeule Page
+
+                            // Whether payment is made before or after production will be based on the provider company's preference
+
+                        // If their order is denied they will be given the option to send the order/request to another company (they should be allowed to choose a secondary company to automatically send a new order in case the first denies it)
+
+    // View Current Productions
+
+        // Here the user is provided with a list of all the pieces it is providing or to be provided with, having a icon and a progress bar on each cell for identification and production progression visualization (maybe with texts on it like, On schedule)
+        
+            // Clicking on it will provide the User with more information and statistics on the piece, who or to whom it is being produced, how many pieces have been produced/delivered so far and etc
+
+    // View Companies list
+
+        // Here the user is provided 
