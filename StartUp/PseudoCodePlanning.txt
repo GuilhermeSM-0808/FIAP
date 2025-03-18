@@ -18,7 +18,7 @@
 
                     //With that the company's "Orçamento" can be automatically calculated based on the client's order
 
-// After Loggin in the user will have the option to: Scan a new Technical Drawing, View Current Productions, View Other Company profiles, See their Production/Shipment Schedule and to go to Settings
+// After Loggin in the user will have the option to: Scan a new Technical Drawing, View Current Productions / See Production/Delivery Schedules, View Other Company profiles and to go to Settings
 
     // Scanning a new Technical Drawing
 
@@ -36,18 +36,52 @@
 
                             // The company receiving the requests will be provided with their very own "Orçamento", production procedures needed and based on their information they can choose to accept or not the order/request
 
+                                // And based on their raw material stock, they will be informed if they can produce all of it or if they will need to order more and give them the option to order through the app
+
                         // If their order is accepted that piece will be added to the Client's and Provider's Currently in Productions Page and Schdeule Page
 
                             // Whether payment is made before or after production will be based on the provider company's preference
 
                         // If their order is denied they will be given the option to send the order/request to another company (they should be allowed to choose a secondary company to automatically send a new order in case the first denies it)
 
-    // View Current Productions
+    // View Current Productions / View Production/Delivery Schedule
 
-        // Here the user is provided with a list of all the pieces it is providing or to be provided with, having a icon and a progress bar on each cell for identification and production progression visualization (maybe with texts on it like, On schedule)
+        // Here the user will be directed to the list, but will have a button on top of th epage to switch to the timeline
+
+            // Here the user is provided with a list of all the pieces it is providing or to be provided with, having a icon and a progress bar on each cell for identification and production progression visualization (maybe with texts on it like, On schedule)
         
-            // Clicking on it will provide the User with more information and statistics on the piece, who or to whom it is being produced, how many pieces have been produced/delivered so far and etc
+                // Clicking on it will provide the User with more information and statistics on the piece, who or to whom it is being produced, how many pieces have been produced/delivered so far and etc (Graphs of expected/scheduled produciton vs produced)
+
+            // Here the user is presented with a calendar timeline, showing all production/delivery deadlines, where he can filter top view different pieces schedules, different company's schedules and so on.
 
     // View Companies list
 
-        // Here the user is provided 
+        // Here the user is provided with a list of all registered companies and he can filter the list by type of piece they produce, provider or buyer, distance and etc
+
+            // Clicking on a Company shows their profile, a more detailed information list on that company, stats, contact info, reviews and so on. Possibly the company's website. And all the users/people associated with that comapny.
+
+                // All the information that is shared, is decided by the company whether to share it or not, in the settings of their company profile.
+
+    // Settings
+
+        // Here the user can find settings for: Personal profile, Company's profile, Payment methods, App aperance, Support
+
+            // Personal profile
+
+                // Here the user is able to change their information like, profile picture, contact information and company association.
+
+            // Comapny's profile
+
+                // Here the user is able to change information like, address, contact information, machinery available ( so they can update which machines they have and the app will automatically update their production capacity and capabilities/ types of pieces they can produce), people associated with the company, available stock, employee's salaries, budgeting/"Orçamento". Anything related to their production costs.
+
+            // Payment methods
+
+                // Here the user is able to insert their payment preference, account informations, if they prefer to pay/be paid before or after delivery.
+
+            // App aperance
+
+                // Here the user is able to change between light/dark mode, font size, contrast mode and so on. Quality of life preferences.
+
+            // Support
+
+                // Here the user is presented with FAQ, contact information, legal terms and so on
