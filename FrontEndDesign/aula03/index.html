@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEnd Design Aula_03</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Forneça as suas informações</legend>
+        <h3>Gênero:</h3>
+        <input type="radio" name="genero" value="masculino">
+        <span>Masculino</span><br>
+        <input type="radio" name="genero" value="feminino">
+        <span>Feminino</span><br> 
+        <input type="radio" name="genero" value="outros" required>
+        <span>Outros</span><br>
+
+        <hr>
+
+        <h3>Meios de Transportes para ir a Fiap</h3>
+        <input type="checkbox" name="transport" value="onibus">
+        <span>Onibus</span>
+        <input type="checkbox" name="transport" value="metro">
+        <span>Metro</span>
+        <input type="checkbox" name="transport" value="carro">
+        <span>Carro</span>
+        <input type="checkbox" name="transport" value="bike">
+        <span>Bicicleta</span>
+
+        <br><hr>
+
+        <h3>Tamanho da sua camisa:</h3>
+        <select name="tamanho_camisa">
+            <option value="p">Pequeno</option>
+            <option value="m">Medio</option>
+            <option value="g">Grande</option>
+        </select>
+
+        <br><hr>
+
+        <label for="nome_sobrenome">Nome e Sobrenome</label><br>
+        <input type="text" name="nome_sobrenome" placeholder="Digite seu nome..." required>
+
+        <br><br><!--Isso é gambiarra-->
+
+        <label for="comentario">Comentario</label><br>
+        <textarea name="comentario" placeholder="Deixe aqui seu comentario..."></textarea>
+
+        <br><br>
+
+        <button type="submit">Enviar</button>
+        
+        <button type="reset">Limpar</button>
+
+        </fieldset>
+    </form>
+
+    <img src="img/doguinho.gif" alt="Gif de doguinho caramelo dançando" width="200px">
+    <img src="img/doguinho.gif" alt="Gif de doguinho caramelo dançando" width="200px">
+    <img src="img/doguinho.gif" alt="Gif de doguinho caramelo dançando" width="200px">
+    <img src="img/doguinho.gif" alt="Gif de doguinho caramelo dançando" width="200px">
+
+    <br><br>
+
+    <a href="http://www.fiap.com.br" title="Site da Fiap">
+        <img src="img/logo_fiap.png" alt="Logo Fiap" width="60px">
+    </a>
+</body>
+</html>
