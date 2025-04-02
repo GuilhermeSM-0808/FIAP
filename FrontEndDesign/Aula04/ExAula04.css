@@ -1,0 +1,12 @@
+.desafio1 {
+    color: orange;
+
+}
+#lista1, #lista2 {
+    list-style-type: circle;
+    color: aqua;
+    background-color: darkblue;
+}
+#lista2 {
+    list-style-type: decimal;
+}
