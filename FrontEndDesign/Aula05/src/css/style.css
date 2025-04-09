@@ -1,0 +1,49 @@
+/* div {
+    overflow: auto;
+    border: dotted 5px red;
+    padding: 6px 9px;
+    margin: 5px 8px;
+
+    display: inline-block;
+    font-size: 32px;
+    font-family: Arial;
+
+    width: 100px;
+    height: 135px;
+
+} */
+/* 
+p{
+    display: inline-block;
+    background-color: yellow;
+}
+
+span{
+    display: block;
+    background-color: grey;
+} */
+
+p{
+    font-size: 35px;
+}
+
+div{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+
+}
+
+.azul {
+    border: solid 4px blue;
+
+}
+
+.amarelo{
+    border: solid 4px red;
+    background-color: yellow;
+    position: relative;
+    top: 80px;
+    left: 50px;
+
+}
