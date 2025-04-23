@@ -1,0 +1,28 @@
+section{
+    padding: 20px;
+    border: 3px solid darkblue;
+    background-color: lightblue;
+}
+
+section:first-child{
+    background-color: lightgrey;
+}
+
+
+.produto:hover{
+    background-color: lightgreen;
+}
+
+p::first-letter{
+    color: red;
+}
+
+button:hover{
+    background-color: lightgreen;
+    font-size: 16px;
+}
+
+
+span::after{
+    content: "<--";
+}
