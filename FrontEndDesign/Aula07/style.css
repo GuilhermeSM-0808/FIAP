@@ -1,0 +1,128 @@
+body{
+    background-image: linear-gradient(to left, red, yellow);
+}
+
+#grad{
+    background-image: linear-gradient(to left, blue, purple);
+    padding: 20px;
+}
+#grad2{
+    background-image: linear-gradient(to top, green,lightblue);
+    padding: 20px;
+}
+
+
+div.vazio{
+    border: 3px solid black;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 300px;
+    top: 150px;
+}
+
+div.transform{
+    background-image: linear-gradient(red, brown) ;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 303px;
+    top: 153px;
+
+
+}
+
+div.transform:hover{
+    /* transform: translate(10px, 20px); */
+    transform: translateX(50px);
+    transform: rotate(127deg);
+    /* transform: rotateX(30deg);
+    transform: rotateY(30deg); */
+    /* transform: scale(1.2, 0.8); */
+    /* transform: skew(20deg, 10deg); */
+    /* transform: skewX(-75deg); */
+
+    
+    
+}
+
+div.transition{
+
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    border: 3px black solid;
+
+
+    height: 100px;
+    width: 100px;
+
+    /* transition: height 2s, width 1s; */
+    transition: all 2s;
+    background-color: aqua;
+}
+div.transition:hover{
+    height: 150px;
+    width: 125px;
+    background-color: darkred;
+    color: aliceblue;
+    padding: 20px;
+}
+
+input{
+    position: absolute;
+    top: 300px;
+    left: 100px;
+
+
+    width: 100px;
+    height: 100px;
+    transition: all 2s;
+}
+input:focus{
+    width: 500px;
+    height: 122px;
+}
+
+h1 {
+    position: absolute;
+    top: 400px;
+    left: 600px;
+    font-size: 64px;
+
+    animation-delay: 2s;
+    animation-duration: 2s;
+    animation-name: fadein;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fadein {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+div.efeito{
+    position: absolute;
+    top: 200px;
+    left: 800px;
+    width: 100px;
+    height: 100px;
+    background-color: darkgreen;
+    
+    animation-name: FX;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-timing-function: linear;
+}
+
+@keyframes FX {
+    0% {width: 100px;}
+    10% {width: 150px;}
+    50% {width: 300px; background-color: darkgreen;}
+    72% {width: 380px;}
+    75% {width: 400px; background-color: red;}
+    80% {width: 380px;}
+    90% {width: 325px;}
+    100% {width: 300px; background-color: darkgreen;}
+}
