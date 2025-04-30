@@ -1,3 +1,4 @@
+
 section{
     padding: 20px;
     border: 3px solid darkblue;
@@ -8,6 +9,11 @@ section:first-child{
     background-color: lightgrey;
 }
 
+/* Not working properly */
+ section:nth-child(2n){
+    background-color: darkblue;
+    color: red;
+}
 
 .produto:hover{
     background-color: lightgreen;
