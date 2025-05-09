@@ -9,7 +9,7 @@ console.log(nome.trim())
 
 let num = 5.5555555555
 console.log(num.toFixed(2))
-console.log(isNaN(num)) //Falso para ele "Não é um numero" (pq ele é um numero)
+console.log(isNaN(num)) //Falso para ele "Não ser um numero" (pq ele é um numero)
 
 console.log(Math.random())
 console.log(Math.random()*11) //Sortear um numero entre 1 e 10 (arredondar para baixo)
