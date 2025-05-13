@@ -2,56 +2,56 @@
 #include <LiquidCrystal_I2C.h> // Biblioteca utilizada para fazer a comunicação com o display 20x4 
 #include <DHT.h>
 
+//Global
+  // CONFIG LCD I2C
+    #define col 16 // Serve para definir o numero de colunas do display utilizado
+    #define lin  2 // Serve para definir o numero de linhas do display utilizado
+    #define ende  0x27 // Serve para definir o endereço do display.
 
-// CONFIG LCD I2C
-  #define col 16 // Serve para definir o numero de colunas do display utilizado
-  #define lin  2 // Serve para definir o numero de linhas do display utilizado
-  #define ende  0x27 // Serve para definir o endereço do display.
+    LiquidCrystal_I2C lcd(ende,col,lin); // Chamada da funcação LiquidCrystal para ser usada com o I2C
 
-  LiquidCrystal_I2C lcd(ende,col,lin); // Chamada da funcação LiquidCrystal para ser usada com o I2C
+  //CONFIG DHT
+    //Pino conectado ao pino de dados do sensor
+      #define DHTPIN 5
+    //Utilize a linha de acordo com o modelo do sensor
+      #define DHTTYPE DHT11   // Sensor DHT11
+      //#define DHTTYPE DHT22   // Sensor DHT 22  (AM2302)
+    //Definicoes do sensor : pino, tipo
+    DHT dht(DHTPIN, DHTTYPE);
 
-//CONFIG DHT
-  //Pino conectado ao pino de dados do sensor
-    #define DHTPIN 5
-  //Utilize a linha de acordo com o modelo do sensor
-    #define DHTTYPE DHT11   // Sensor DHT11
-    //#define DHTTYPE DHT22   // Sensor DHT 22  (AM2302)
-  //Definicoes do sensor : pino, tipo
-  DHT dht(DHTPIN, DHTTYPE);
+  //Light Sensor Set up
+      int Sensor_Luz = 4;
+    // These constants should match the photoresistor's "gamma" and "rl10" attributes
+      const float GAMMA = 0.7;
+      const float RL10 = 50;
 
-//Light Sensor Set up
-    int Sensor_Luz = 4;
-  // These constants should match the photoresistor's "gamma" and "rl10" attributes
-    const float GAMMA = 0.7;
-    const float RL10 = 50;
+    // Convert the analog value into lux value:
+      int analogValue = analogRead(A3);
+      float voltage = analogValue / 1024. * 5;
+      float resistance = 2000 * voltage / (1 - voltage / 5);
+      float lux = pow(RL10 * 1e3 * pow(10, GAMMA) / resistance, (1 / GAMMA));
 
-  // Convert the analog value into lux value:
-    int analogValue = analogRead(A3);
-    float voltage = analogValue / 1024. * 5;
-    float resistance = 2000 * voltage / (1 - voltage / 5);
-    float lux = pow(RL10 * 1e3 * pow(10, GAMMA) / resistance, (1 / GAMMA));
+  //Constantes
+    int Button = 2;
+    int Buzzer = 3;
+    int LedR = 8;
+    int LedY = 6;
+    int LedG = 7;
 
-//Constantes - Setup
-  int Button = 2;
-  int Buzzer = 3;
-  int LedR = 8;
-  int LedY = 6;
-  int LedG = 7;
+  //Variables
+    long OnTime = millis();
+    long LastTime = 0;
+    long Time = 0;
+    int Display = 0;
+    bool TempOk = true;
+    bool UmiOk = true;
+    bool LuzOk = true;
+    int instance = 0;
 
-//Variables
-  long OnTime = millis();
-  long LastTime = 0;
-  long Time = 0;
-  int Display = 0;
-  bool TempOk = true;
-  bool UmiOk = true;
-  bool LuzOk = true;
-  int instance = 0;
-
-//Listas
-  float list_t[5];
-  float list_u[5];
-  float list_lux[5];
+  //Listas
+    float list_t[5];
+    float list_u[5];
+    float list_lux[5];
 
 void setup() {
 
@@ -152,26 +152,25 @@ void loop() {
         lcd.println("Falha ao ler dados do sensor de Luz !!!");
         return;
       }
-    //Verificar se os valores estao dentro dos padroes
-      if ( 10.0 <= t && t <= 15.0 ){
-        TempOk = true;
-      }
-      else{
-        TempOk = false;
-      }
-      if ( 50.0 <= u && u <= 70.0){
-        UmiOk = true;
-      }
-      else{
-        UmiOk = false;
-      }
-      if ( lux <= 10.5){
-        LuzOk = true;
-      }
-      else{
-        LuzOk = false;
-      }
-
+  //Verificar se os valores estao dentro dos padroes
+    if ( 10.0 <= t && t <= 28.0 ){
+      TempOk = true;
+    }
+    else{
+      TempOk = false;
+    }
+    if ( 50.0 <= u && u <= 70.0){
+      UmiOk = true;
+    }
+    else{
+      UmiOk = false;
+    }
+    if ( lux <= 50){
+      LuzOk = true;
+    }
+    else{
+      LuzOk = false;
+    }
 
   //Mostrar no Display
     if (Time / 5000 >= 1){
@@ -187,6 +186,9 @@ void loop() {
       lcd.clear();
       Display ++;
       LastTime = OnTime;
+      if (Display > 2){
+        Display = 0;
+      }
     }
     // Se todas a medidas estiverem dentro do parametro, mostrar cada medida de 5 em 5 segundos
     if (TempOk == true && UmiOk == true && LuzOk == true){
@@ -210,7 +212,7 @@ void loop() {
       }
       //Mostrar a luminosidade
       else if (Display == 2){
-        if (lux > 1){
+        if (lux > 10){
           lcd.setCursor(0,0);
           lcd.print("Ambiente a meia"); 
           lcd.setCursor(0,1);
@@ -272,7 +274,7 @@ void loop() {
           lcd.setCursor(0,0);
           lcd.print("Ambiente muito"); 
           lcd.setCursor(0,1);
-          lcd.print("CLARO!!"); 
+          lcd.print("CLARO!!!!!!!!!"); 
         }
       }
     } 
@@ -293,7 +295,7 @@ void loop() {
       digitalWrite(LedG, 0);
     }
     else if (TempOk == true && UmiOk == true && LuzOk == true){
-      if (lux > 1){
+      if (lux > 10){
       digitalWrite(LedR, 0);
       digitalWrite(LedY, 1);
       digitalWrite(LedG, 0);
