@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 08 - DOM</title>
+
+<style>
+    *{
+        margin: 5px;
+    }
+    ::first-letter{color: red;}
+    
+</style>
+
+</head>
+
+<body>
+    <h1>Document Object Model</h1>
+
+    <button onclick="alert('Pressionou')">Clique Aqui</button>
+    <br>
+    <button id="btnClicar">Clique Aqui</button>
+
+    <p id="paragrafo">Guilherme S.M.</p>
+
+    <form id="form" style="display: flex; flex-direction: column;">
+        <label for="nome">Nome: </label>
+        <input type="text" id="nome">
+        <label for="email">E-mail: </label>
+        <input type="text" id="email">
+
+        <label for="assunto">Assunto</label>
+        <select id="assunto">
+            <option value="option1">Reclamação</option>
+            <option value="optino2">Sugestão</option>
+            <option value="option3">Critica</option>
+        </select>
+
+        <label for="mensagem">Mensagem: </label>
+        <textarea id="mensagem"></textarea>
+        <button id="btnEnviar">Enviar</button>
+        <p id="msgErro"></p>
+
+        <div id="cadastros">
+            <h2>Usuários</h2>
+            <hr>
+
+        </div>
+
+    </form>
+
+</body>
+
+<script src="./app.js"></script>
+
+</html>
