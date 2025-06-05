@@ -57,20 +57,20 @@ def previsao_rio(i):
         if previsao_nivel_rio_local[i] < -0.5:
             previsao_nivel_rio_local[i] = -0.5
 
-def receber_dados():
+def receber_dados(i):
     '''
     Função para receber dados do dispostivo, porem nesta simulacao como input do usuario.
     '''
     try:
-        us = (float(input("Insira a porcentagem da umidade do solo transmitido pelo dispositivo: ")))
+        us = (float(input(f"Insira a porcentagem da umidade do solo transmitido pelo dispositivo no Dia {i+1}: ")))
         if 0 > us or us > 100:
-            print("O valor precisa estar entre 0 e 100. Tente novamente:")
-            return receber_dados()
+            print("O valor precisa ser entre 0 e 100. Tente novamente:\n")
+            return receber_dados(i)
         else:
             umidade_solo.append(us)
     except ValueError:
-        print("Input Invalido. Tente novamente: ")
-        return receber_dados()
+        print("Input Invalido. Insira um valor numerico. Tente novamente:\n")
+        return receber_dados(i)
 
 def quantidade_de_dados():
     '''
@@ -78,10 +78,14 @@ def quantidade_de_dados():
     No sistema real este sera um valor fixo, mas para o proposito de facilitar o uso da simulacao, este e um valor definido pelo usuario.
     '''
     try:
-        x = int(input("Insira a quantidade de dados recebida: "))
-        return x
+        x = int(input("\nInsira a quantidade de dados a ser inserida, (dados de quantos dias você quer fornecer?): "))
+        if x <= 0:
+            print("\nInput Invalido. Insira um valor inteiro maior que 0. Tente Novamente:")
+            return quantidade_de_dados()
+        else:
+            return x
     except ValueError:
-        print("Input Invalido. Tente novamente: ")
+        print("\nInput Invalido. Insira um numero inteiro. Tente novamente:")
         return quantidade_de_dados()
     
 def exibir_dados():
@@ -95,7 +99,7 @@ def exibir_dados():
         
 def alerta(l):
     if previsao_nivel_rio_local[l] > nivel_rio_perigo:
-        print("\n********ALERTA*********\n")
+        print("********ALERTA*********\n")
         print(f"Enchente iminente!! Rio deve ultrapassar o nivel seguro de {nivel_rio_perigo}m\n")
         print(f"Previsão que o rio {rio_local} deve alcançar: {previsao_nivel_rio_local[l]}m")
         print("*****************************************************\n")
@@ -107,7 +111,7 @@ def main():
     Função principal que inicia todas as funcoes necessarias para o funcionamente da simulação.
     '''
     for i in range(quantidade_de_dados()):
-        receber_dados()
+        receber_dados(i)
         previsao_elementos(i)
         previsao_rio(i)    
     
