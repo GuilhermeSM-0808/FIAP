@@ -4,9 +4,9 @@ Simulação do funcionamento dos servidores, analise de dados e previsão de des
 Baseado na media de leitura de um unico dispositivo
 
 Grupo:
-Vitor Pallis
-Guilherme Satler Macedo
-Miguel Manfre
+Guilherme Satler Macedo - RM 563330
+Vitor Pallis - RM 561962
+Miguel Manfre - RM 564233
 '''
 
 import random as r
@@ -23,6 +23,7 @@ temperatura = [] ## em Celsius
 ##Dados coletados pelo servidor atráves da internet ou outro sistema
 previsao_chuva = [] ## chuva em mm
 escoamento_do_rio = 0.5 ## escoamento constante do rio
+nivel_rio_perigo = 2.1
 
 ## Previsão do servidor
 previsao_nivel_rio_local = [] ## metros acima do nivel padrão
@@ -38,6 +39,8 @@ def previsao_elementos(i):
     elif umidade_solo[i] < umidade_solo[i-1] and i > 0:
         previsao_chuva.append(0)
         temperatura.append(round((temperatura[i-1] + (r.random()*3)),2))
+        if i == 1:
+            previsao_chuva[i-1] = 0
     else:
         previsao_chuva.append(100.0)
         temperatura.append(23.5)
@@ -45,12 +48,14 @@ def previsao_elementos(i):
 def previsao_rio(i):
     '''
     A partir da previsão de chuva, a Função determina quanto o nivel do rio deve subir ou descer.
-    '''
+    ''' 
     previsao_nivel_rio_local.append(0.2)
     if previsao_chuva[i] > 0 and i > 0:
         previsao_nivel_rio_local[i] = float(round(previsao_nivel_rio_local[i-1] + ((previsao_chuva[i]/500)*2),2))
     elif previsao_chuva[i] <= 0 and i > 0:
         previsao_nivel_rio_local[i] = float(round((previsao_nivel_rio_local[i-1] - escoamento_do_rio),2))
+        if previsao_nivel_rio_local[i] < -0.5:
+            previsao_nivel_rio_local[i] = -0.5
 
 def receber_dados():
     '''
@@ -85,7 +90,17 @@ def exibir_dados():
     '''
     print(f"\nDados da Localizacao: {cord_dispositivo}.\n")
     for l in range(len(umidade_solo)):
-        print(f"Dia {l+1}:\nUmidade do Solo: {umidade_solo[l]}%\nTemperatura: {temperatura[l]}°C\nPrevisão de chuvao: {previsao_chuva[l]} mm\nPrevisão do nivel do rio {rio_local}: {previsao_nivel_rio_local[l]} m\n")
+        print(f"Dia {l+1}:\nUmidade do Solo: {umidade_solo[l]}%\nTemperatura: {temperatura[l]}°C\nPrevisão de chuvao: {previsao_chuva[l]} mm")
+        alerta(l)
+        
+def alerta(l):
+    if previsao_nivel_rio_local[l] > nivel_rio_perigo:
+        print("\n********ALERTA*********\n")
+        print(f"Enchente iminente!! Rio deve ultrapassar o nivel seguro de {nivel_rio_perigo}m\n")
+        print(f"Previsão que o rio {rio_local} deve alcançar: {previsao_nivel_rio_local[l]}m")
+        print("*****************************************************\n")
+    else:
+        print(f"Previsão que o rio {rio_local} deve alcançar: {previsao_nivel_rio_local[l]}m\n")
 
 def main():
     '''
