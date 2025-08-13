@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio - Aula 12 </title>
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+        *{
+            transition-duration: 2s;
+        }
+
+        body{
+    background-color: lightpink;
+    }
+
+    header, div, aside{
+        background-color: lightblue;
+        padding: 20px;
+        margin: 10px 15px;
+        border-radius: 8px;
+        align-content: center;
+        text-align: center;
+    }
+
+    header{
+        grid-area: header;
+    }
+
+    div{
+        grid-area: div;
+        padding: 80px 20px;
+    }
+
+    aside{
+        grid-area: aside;
+    }
+
+    .container{
+        display: grid;
+        grid-template-columns: 100px auto 100px;
+        grid-template-rows: repeat(1, 100px);
+        gap: 10px;
+        grid-template-areas:
+        "header header header"
+        "div div div"
+        "aside aside aside"
+    }
+
+
+    @media screen and (min-width: 768px) {
+        body{
+            background-color: rgb(177, 66, 54);
+            
+        }
+        .container{
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas:
+                "header header header"
+                "div div aside";
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header>Header</header>
+        <div>Content</div>
+        <aside>Sidebar</aside>
+    </main>
+</body>
+</html>
