@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAILWIND.css</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        *{
+            transition: all 1s;
+        }
+
+        
+    </style>
+
+</head>
+<body>
+
+    <div class="h-40 bg-[#ff4] md:bg-green-500 lg:bg-blue-500">
+        Cor muda com o tamanho da tela
+    </div>
+    <br>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+        <div class="bg-gray-200 p-4">1</div>
+        <div class="bg-gray-200 p-4">2</div>
+        <div class="bg-gray-200 p-4">3</div>
+    </div>
+
+    <button class="bg-blue-500 hover:bg-blue-700 text-white hover:text-pink-500 font-bold py-2 px-4 rounded transition duration-300 mx-80">
+        Hover me
+    </button>
+
+    <br><br>
+    <div class="w-64 h-32 bg-purple-500 animate-bounce hover:animate-spin m-20">bounce bounce</div>
+
+    <div class="max-w-sm mx-auto mt-10 p-6 bg-white rounded-xl shadow-md hover:shadow-2xl transform hover:scale-125 transition duration-500">
+        <h2 class="text-xl font-bold text-gray-900">Título do Card</h2>
+        <p class="mt-2 text-gray-600">Esse é um exemplo de card animado e responsivo com Tailwind CSS.</p>
+    </div>
+
+</body>
+</html>
