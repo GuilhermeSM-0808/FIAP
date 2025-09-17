@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> 
+<head>
+  <meta charset="UTF-8">
+  <title>Aula17 - Exercicio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Informa ao Tailwind para usar o modo de classe, ignorando o navegador.
+  tailwind.config = {
+    darkMode: 'class'
+  }
+</script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-black dark:text-white min-h-screen flex flex-col items-center justify-center">
+
+    <form action="" class="bg-gray-400 dark:bg-grey-600 m-4 py-2 px-2 rounded  dark:text-white">
+        <div class="m-4">
+            <label for="nome">Nome: </label>
+            <input type="text" id="nome" class="bg-gray-200 dark:bg-gray-800 dark:text-white py-2 px-4">
+        </div>
+        <div class="m-4">
+            <label for="email">E-mail: </label>
+            <input type="email" id="email" class="bg-gray-200 dark:bg-gray-800 dark:text-white py-2 px-4">
+        </div>
+        <div class="m-4 flex flex-col items-center justify-center">
+            <input type="checkbox" id="abrir" class="peer hidden" />
+            <label for="abrir" class="cursor-pointer bg-green-500 text-white px-4 py-2 rounded">Enviar</label>
+
+            <div class="fixed inset-0 bg-black/50 hidden peer-checked:flex items-center justify-center">
+                <div class="bg-white p-6 rounded shadow-md max-w-sm dark:bg-gray-800 dark:text-white">
+                <p>Conteúdo do modal</p>
+                <label for="abrir" class="cursor-pointer mt-4 inline-block bg-red-500 text-white px-4 py-2 rounded">Fechar</label>
+                </div>
+            </div>
+        </div>
+    </form>
+
+  <button id="toggle-dark" class="mb-6 px-4 py-2 bg-blue-500 text-white rounded">
+    Alternar Dark Mode
+  </button>
+
+  <div class="p-6 rounded bg-gray-100 dark:bg-gray-800">
+    <p>Este card muda com o dark mode 🌙</p>
+  </div>
+
+  <script>
+    const btn = document.getElementById('toggle-dark');
+    btn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+  </script>
+</body>
+</html>
