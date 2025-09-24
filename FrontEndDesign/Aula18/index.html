@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 18 - Animações Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+
+    <style>
+        *{
+            margin: 20px;
+        }
+
+    </style>
+
+</head>
+<body class="bg-gray-900">
+    
+    <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded transition duration-300 ease-in-out">
+        Clique Suave
+    </button>
+
+    <!-- 
+    Para entendermos melhor o uso das unidades no Tailwind:
+    1 -> 0.25rem -> 4px (logo 4 -> 1rem -> 16px) 
+    -->
+    <div class="w-10 h-10 bg-blue-500 rounded-full animate-bounce"></div>
+
+    <div class="p-4 bg-green-300 rounded animate-fade w-20">Fade</div>
+    <button class="animate-wiggle text-white">Treme</button>
+    <div class="animate-wiggle w-40 h-10 bg-green-500 rounded-full"></div>
+    <div class="animate-fade w-10 h-10 bg-yellow-400 rounded-full"></div>
+
+    <p class=" text-red-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor sequi voluptatum in ab, unde voluptas, molestias quisquam delectus distinctio vero esse illo quod doloribus accusamus nulla commodi perspiciatis ut vel atque error ex, sed accusantium nihil. Autem consequatur porro maiores dolore impedit officia iste commodi fugiat sint optio rerum soluta doloremque ex laudantium iure illo id, suscipit, itaque odit corporis? Deleniti corporis ipsum, aperiam similique cumque officiis dolorum saepe odio numquam quae, ullam harum. Rerum expedita vitae delectus, unde fugiat magnam quaerat porro qui. Nulla, quaerat modi. Mollitia saepe, eveniet quaerat ipsa excepturi cumque recusandae nam eum iste nesciunt sapiente provident illum non aliquam voluptatem ab. Architecto asperiores ipsam ratione, atque velit nisi reiciendis voluptas ut maiores sint impedit itaque vel nostrum exercitationem hic blanditiis minus repellendus dolore enim reprehenderit dolorum animi. Eos ad aliquid quos aspernatur laboriosam nostrum dolor, blanditiis culpa, exercitationem eum fugiat voluptatum possimus totam consequuntur earum consectetur veniam voluptatem incidunt inventore dicta obcaecati. Quia impedit enim iste illo modi consequatur aperiam nulla dolorum, totam, libero ducimus illum quod molestiae dolores accusamus quo debitis voluptas quidem repellendus atque. Nulla molestiae ex tenetur vero ipsa fugiat? Amet quae eveniet dicta nesciunt porro dolorum repellendus quo animi vero fugiat, obcaecati sed cum id harum, delectus, perspiciatis repudiandae doloremque sunt. Ipsam quaerat fuga neque deleniti optio alias suscipit veniam minima libero. Nisi laudantium impedit perferendis a architecto ipsam sapiente corporis natus, soluta incidunt. Nemo dicta vero quibusdam incidunt quod vel beatae pariatur nesciunt dolorum facilis reprehenderit quam autem numquam corporis consectetur, quas ullam magni officiis ipsam? Debitis voluptatibus, nobis adipisci iusto possimus ex sed repellendus dolor libero id quia fugit qui non quae ullam deleniti laborum minus? Aperiam ex laborum odit aliquid mollitia explicabo nisi repellendus, incidunt molestias ut eum. Iste, cupiditate facilis! Voluptatum molestias ea ipsa sit perferendis eius reprehenderit cumque provident accusantium quia a dolorum deleniti consectetur, itaque harum delectus enim totam exercitationem nihil recusandae illo tempore aut non mollitia. Nisi, praesentium corrupti maxime repudiandae eius sed consequatur placeat enim ipsum, quasi harum. Quidem, recusandae accusantium? Totam reiciendis, officia laboriosam eaque cupiditate, tempore voluptatibus incidunt quisquam iste molestias quod. Libero magni labore itaque non natus perferendis provident sit ad ipsum. Autem, consequatur ab! Deserunt laborum, tenetur nesciunt eius recusandae obcaecati doloribus perferendis nam error consequatur harum odit eligendi quidem ipsa! Ullam earum alias illo sit odio soluta necessitatibus, minus pariatur. Veritatis officiis obcaecati labore vero tenetur distinctio delectus voluptate repudiandae rem fuga, cumque natus recusandae, similique iure eveniet? Possimus necessitatibus facere aspernatur sit dolorem illo asperiores. Ipsa enim commodi aspernatur perspiciatis sed obcaecati et laudantium dolorum quo architecto quae quibusdam autem earum, expedita quia alias! Commodi ullam nihil eum odit in ex debitis accusamus! Soluta, error odit aliquid quibusdam sunt ullam repellat fugiat eligendi dignissimos aut quis inventore voluptatem voluptas aperiam possimus iusto ex sequi neque unde adipisci laborum? Aspernatur iste porro error. Aliquid reprehenderit reiciendis repudiandae tenetur deserunt maxime necessitatibus libero aut suscipit, a quidem, delectus eos facere. Autem officia accusamus dolor mollitia, dolore dolores at ea.</p>
+
+    <!-- HTML -->
+    <div class="opacity-0 transition-opacity duration-1000 delay-500 bg-red-800 text-white p-5 rounded-xl" data-observe>
+        Aparece ao rolar!
+    </div>
+
+    <p class="text-red-800">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero aspernatur illum molestiae dignissimos qui quas totam rerum voluptates culpa facilis sunt praesentium ea mollitia omnis distinctio alias minima, quidem perferendis quod quasi consequuntur aliquid similique cumque odio. Consequuntur temporibus deserunt quam fugiat quis libero, eligendi magnam reprehenderit, ipsum quod aperiam recusandae facilis similique doloremque repellendus veritatis sed nostrum. Vero ipsa tempora eaque beatae, culpa ad ex ducimus harum deleniti architecto suscipit aut, quam voluptate excepturi temporibus iusto numquam assumenda, nostrum nihil. Repellat voluptates autem totam, quo sunt dolorum ipsam facere possimus mollitia tempora inventore rem. Ipsam dolor, at eveniet quam a nam distinctio, officia, explicabo hic magnam maiores? Mollitia, aliquid! Laboriosam cum, sed repellat, consequatur ad delectus provident perferendis non sunt maxime veritatis officia blanditiis labore id illum dolore iste iure at sequi amet! Autem nulla provident sed, quo deserunt aliquid eius. Impedit fuga molestias ullam officia qui eligendi dolore, accusamus sed nobis, culpa soluta, dolores sint iste consequuntur voluptates ratione? Dolorem similique doloribus et id, eos numquam, quos quaerat, illum dicta dolor repellat provident quis eius at! Quisquam tempora incidunt quaerat ducimus? Ut quia maxime adipisci ratione optio voluptatem dignissimos quod ipsa incidunt est? Dolor similique ad sint fugiat.</p>
+
+    <button onclick="document.getElementById('alerta').classList.remove('hidden')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+        Mostrar Alerta
+    </button>
+
+    <div id="alerta" class="hidden w-80 mt-4 p-4 bg-red-100 text-red-800 rounded animate-bounce">
+        ⚠️ Isso é um alerta animado!
+    </div>
+
+    <!-- JS -->
+    <script>
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100');
+            }
+            });
+        });
+        document.querySelectorAll('[data-observe]').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
