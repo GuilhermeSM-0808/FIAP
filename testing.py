@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import datetime as dt
+import numpy as np
 import pandas as pd
 
 lista_dias = []
